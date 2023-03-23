@@ -1,0 +1,102 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://mnbqr.hu/schema/v2/schema.json",
+    "title": "AFR JSON séma (v2)",
+    "type": "object",
+    "properties": {
+      "id": {
+        "description": "Azonosító kód",
+        "type": "string",
+        "pattern": "^(HCT|RTP)$"
+      },
+      "v": {
+        "description": "Verziószám",
+        "type": "integer",
+        "minimum": 2
+      },
+      "cs": {
+        "description": "Karakterkészlet",
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 1
+      },
+      "bic": {
+        "description": "Fizető fél vagy kedvezményezett BIC/BEI",
+        "type": "string",
+        "pattern": "^[a-zA-Z]{11}$"
+      },
+      "name": {
+        "description": "Fizető fél vagy kedvezményezett neve",
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 70
+      },
+      "iban": {
+        "description": "Fizető fél vagy kedvezményezett IBAN",
+        "type": "string",
+        "pattern": "^[a-zA-Z0-9]{28}$"
+      },
+      "amount": {
+        "description": "Összeg",
+        "type": "number",
+        "exclusiveMinimum": 0,
+        "maximum": 10000000
+      },
+      "curr": {
+        "description": "Pénznem",
+        "type": "string",
+        "pattern": "^[a-zA-Z]{3}$"
+      },
+      "exp": {
+        "description": "Érvényességi idő",
+        "type": "string",
+        "format": "date-time"
+      },
+      "payment_id": {
+        "description": "Fizetési helyzet azonosító",
+        "type": "string",
+        "pattern": "^[a-zA-Z0-9]{4}$"
+      },
+      "txt": {
+        "description": "Közlemény (nem struktúrált)",
+        "type": "string",
+        "maxLength": 70
+      },
+      "shop_id": {
+        "description": "Kereskedelmi egység, bolt azonosító",
+        "type": "string",
+        "maxLength": 35
+      },
+      "pos_id": {
+        "description": "Kereskedelmi eszköz (POS, pénztárgép) azonosító",
+        "type": "string",
+        "maxLength": 35
+      },
+      "bill_id": {
+        "description": "Számla vagy nyugta azonosító",
+        "type": "string",
+        "maxLength": 35
+      },
+      "costumer_id": {
+        "description": "Ügyfélazonosító",
+        "type": "string",
+        "maxLength": 35
+      },
+      "transaction_id": {
+        "description": "Kedvezményezett belső tranzakcióazonosítója",
+        "type": "string",
+        "maxLength": 35
+      },
+      "discount_id": {
+        "description": "Törzsvásárlói vagy kedvezményezett azonosítója",
+        "type": "string",
+        "maxLength": 35
+      },
+      "nav_code": {
+        "description": "NAV ellenőrző kód",
+        "type": "string",
+        "maxLength": 35
+      }
+    },
+    "required": ["id", "v", "cs", "bic", "name", "iban", "curr", "exp"]
+  }
