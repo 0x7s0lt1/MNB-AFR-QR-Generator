@@ -43,9 +43,8 @@ let App = {
         domain : {
             element: document.getElementById('domain'),
             required: false,
-            //pattern: /^[a-zA-Z]{3}$/
-            //TODO: handle
-            pattern: /^((?!-))(xn--)?[a-z0-9][a-z0-9-_]{0,61}[a-z0-9]{0,}\\-.?((xn--)?  ([a-z0-9\\-.]{1,61}|[a-z0-9-]{1,30})\\-.?[a-z]{2,})$/
+            pattern: /^((?!-))(xn--)?[a-z0-9][a-z0-9\-_]{0,61}[a-z0-9]{0,}\\-.?((xn--)?([a-z0-9\-.]{1,61}|[a-z0-9-]{1,30})\\-.?[a-z]{2,})$/
+
         },
 
         // Összeg
