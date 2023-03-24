@@ -181,6 +181,12 @@ let App = {
                 is_valid = false;
             }
 
+            if(App.field[key].element.value.trim() != '' && !App.field[key].element.value.match(App.field[key].pattern)){
+                App.field[key].element.classList.add('is-invalid');
+                is_valid = false;
+            }
+
+
         })
 
         return is_valid;
@@ -207,7 +213,17 @@ let App = {
               "V": Number(App.field.value.element.value),
               "C": App.field.currency.element.value,
             },
-            "t": App.field.text.element.value
+            "t": App.field.text.element.value,
+            "i": {
+                "p": App.field.positionId.element.value,
+                "s": App.field.shopId.element.value,
+                "m": App.field.machineId.element.value,
+                "b": App.field.billId.element.value,
+                "c": App.field.costumerId.element.value,
+                "t": App.field.transactionId.element.value,
+                "d": App.field.discountId.element.value,
+                "n": App.field.NAVCode.element.value
+            }
         }
 
         return App.json;
